@@ -1,9 +1,15 @@
 extends RichTextLabel
 
 signal score_update
+signal game_won
 var score = 0
-# Called when the node enters the scene tree for the first time.
+
+func format_text(string_to_format):
+	return '[center]' + string_to_format + '[/center]'
+
 func _ready():
+	set_use_bbcode(true)
+	add_to_group('scores')
 	#programatically connecting nodes. The editor based way is also good. 
 	#the next two lines are for a single node
 	#var coin2Area3D = get_node('../../Box/coin2/Area3D')
@@ -20,7 +26,16 @@ func _on_coin_destroyed():
 	score+=1
 	if score == 10:
 		print('game won in update_score')
-		text = 'You Win!'
+		text = format_text('You Win!')
+		game_won.emit()
 	else:
-		text = 'Score: '+ str(score)
+		text = format_text('Score: '+ str(score))
 	score_update.emit(score, "test_binding")
+
+#this one is connected via the editor, check ball node and click the node tab instead of inspector
+func _on_ball_ball_lost():
+	score = 0
+	text = format_text('Ball lost. Resetting game.')
+	#score_update.emit(score, 'lost the ball')
+	await get_tree().create_timer(2.0).timeout
+	get_tree().reload_current_scene()
