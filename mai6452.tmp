@@ -332,4 +332,3 @@ stream = ExtResource("7_7snna")
 script = ExtResource("8_wvama")
 
 [connection signal="ball_lost" from="ball" to="Control/Score" method="_on_ball_ball_lost"]
-[connection signal="game_won" from="Control/Score" to="coin_sound_stream" method="_on_score_game_won"]
