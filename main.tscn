@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://deyydcvl25eqq"]
+[gd_scene load_steps=24 format=3 uid="uid://deyydcvl25eqq"]
 
 [ext_resource type="Script" path="res://scripts/game_condition.gd" id="1_dsav1"]
 [ext_resource type="Script" path="res://scripts/controlBox.gd" id="1_jpo8r"]
 [ext_resource type="Script" path="res://scripts/ball.gd" id="2_ibdik"]
-[ext_resource type="Script" path="res://scripts/coin_rotate.gd" id="2_sxepq"]
-[ext_resource type="Script" path="res://scripts/coin_collision.gd" id="3_lovbq"]
+[ext_resource type="Script" path="res://scripts/coin.gd" id="2_sxepq"]
 [ext_resource type="Script" path="res://scripts/update_score.gd" id="5_ugl70"]
 [ext_resource type="AudioStream" uid="uid://ba0iqlch3gxac" path="res://audio/coin_sound.mp3" id="7_7snna"]
 [ext_resource type="Script" path="res://scripts/play_coin_sound.gd" id="8_wvama"]
@@ -38,6 +37,7 @@ size = Vector3(15, 1, 0.5)
 albedo_color = Color(1, 1, 0.137255, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_akhld"]
+margin = 0.0
 size = Vector3(0.5, 0.580298, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl6ss"]
@@ -127,7 +127,6 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin2"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin2/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
@@ -144,7 +143,6 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin3"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin3/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
@@ -161,7 +159,6 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin4"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin4/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
@@ -178,14 +175,13 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin5"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin5/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
 shape = SubResource("BoxShape3D_akhld")
 
 [node name="coin6" type="StaticBody3D" parent="Box"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.16312, 0.732971, 4.97137)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.9, 0.733, 4.971)
 script = ExtResource("2_sxepq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box/coin6"]
@@ -195,7 +191,6 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin6"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin6/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
@@ -212,14 +207,13 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin7"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin7/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
 shape = SubResource("BoxShape3D_akhld")
 
 [node name="coin8" type="StaticBody3D" parent="Box"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.22928, 0.732971, 6.25047)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.229, 0.733, 5.02634)
 script = ExtResource("2_sxepq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box/coin8"]
@@ -229,14 +223,13 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin8"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin8/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
 shape = SubResource("BoxShape3D_akhld")
 
 [node name="coin9" type="StaticBody3D" parent="Box"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.61053, 0.732971, -5.64646)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.61053, 0.732971, -6.2288)
 script = ExtResource("2_sxepq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box/coin9"]
@@ -246,7 +239,6 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin9"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin9/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
@@ -263,14 +255,13 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin10"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin10/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
 shape = SubResource("BoxShape3D_akhld")
 
 [node name="coin11" type="StaticBody3D" parent="Box"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.86795, 0.732971, -5.00052)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.86795, 0.802885, -5.00052)
 script = ExtResource("2_sxepq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Box/coin11"]
@@ -280,14 +271,13 @@ skeleton = NodePath("../../coin2")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3sgl")
 
 [node name="Area3D" type="Area3D" parent="Box/coin11"]
-script = ExtResource("3_lovbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box/coin11/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112915, 0)
 shape = SubResource("BoxShape3D_akhld")
 
 [node name="ball" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35519, 4.184, 2.81408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35519, 1.25397, 2.81408)
 script = ExtResource("2_ibdik")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ball"]
